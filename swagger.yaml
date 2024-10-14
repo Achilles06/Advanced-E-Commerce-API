@@ -1,0 +1,30 @@
+swagger: "2.0"
+info:
+  description: "E-commerce API Documentation"
+  version: "1.0.0"
+  title: "E-commerce API"
+paths:
+  /customers:
+    post:
+      summary: "Create a new customer"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Customer"
+      responses:
+        201:
+          description: "Customer created successfully"
+        400:
+          description: "Invalid input"
+definitions:
+  Customer:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      email:
+        type: "string"
+      phone:
+        type: "string"
